@@ -1,0 +1,22 @@
+version: '2'
+services:
+  4501633797a6:
+    image: 'sha256:4501633797a629202ac4022c65c2387f923ad8927f38047aed3e9e3495758119'
+    ports:
+      - '81:80'
+    links:
+      - '375eb6ac2e0e:db'
+    depends_on:
+      - 375eb6ac2e0e
+    environment:
+      - WEB_DOCUMENT_ROOT=/app/laraadminlte/public
+    volumes:
+      - '/home/intent-16/laraAdminLte:/app'
+  375eb6ac2e0e:
+    image: 'sha256:375eb6ac2e0e19b37dd40e63bd01a751f975eeb8c206b5ac8341df9c31ce41bb'
+    environment:
+      - MARIADB_ROOT_PASSWORD=demo1234
+    volumes:
+      - './mysql:/var/lib/mysql'
+    ports:
+      - '3360:3306'
