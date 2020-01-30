@@ -99,7 +99,7 @@
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="/admin/post" class="nav-link active">
+                                        <a href="/admin/post" class="nav-link {{ Request::is('admin/post', 'admin/post/*') ? 'active' : '' }}">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Posts</p>
                                         </a>
